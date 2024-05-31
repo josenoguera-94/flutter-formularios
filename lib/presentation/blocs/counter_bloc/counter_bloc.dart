@@ -6,9 +6,9 @@ part 'counter_state.dart';
 
 class CounterBloc extends Bloc<CounterEvent, CounterState> {
 
-  CounterBloc() : super(const CounterState()) {
+  CounterBloc() : super(const CounterState()) { // se puede cambiar los valores en el constructor
     
-    on<CounterIncreased>( _onCounterIncreased );
+    on<CounterIncreased>( _onCounterIncreased ); // event, emit
     on<CounterReset>( _onCounterReset );
 
   }
