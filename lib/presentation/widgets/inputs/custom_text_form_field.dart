@@ -9,6 +9,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final Function(String)? onChanged;
   final String? Function(String?)? validator;
+  // void Function(String)? onChanged2;
 
   const CustomTextFormField({
     super.key, 
@@ -44,7 +45,7 @@ class CustomTextFormField extends StatelessWidget {
         isDense: true,
         label: label != null ? Text(label!) : null,
         hintText: hint,
-        errorText: errorMessage,
+        errorText: errorMessage, // null también es válido
         focusColor: colors.primary,
         // icon: Icon( Icons.supervised_user_circle_outlined, color: colors.primary, )
       ),
