@@ -14,7 +14,7 @@ class RegisterFormState extends Equatable {
   const RegisterFormState({
     this.formStatus = FormStatus.invalid, 
     this.isValid = false,
-    this.username = const Username.pure(), 
+    this.username = const Username.pure(), // .pure() es un estado inicial
     this.email = const Email.pure(), 
     this.password = const Password.pure(),
   });

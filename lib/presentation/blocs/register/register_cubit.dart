@@ -13,7 +13,7 @@ class RegisterCubit extends Cubit<RegisterFormState> {
     emit(
       state.copyWith(
         formStatus: FormStatus.validating,
-        username: Username.dirty( state.username.value ),
+        username: Username.dirty( state.username.value ), // .dirty() es un estado modificado
         password: Password.dirty( state.password.value ),
         email: Email.dirty( state.email.value ),
 
@@ -29,6 +29,16 @@ class RegisterCubit extends Cubit<RegisterFormState> {
 
     print('Cubit Submit: $state');
   }
+
+  
+  // void usernameChanged( String value ) {
+  //   emit(
+  //     state.copyWith(
+  //       username: value,
+  //     )
+  //   );
+  // }
+
 
 
   void usernameChanged( String value ) {
@@ -57,6 +67,7 @@ class RegisterCubit extends Cubit<RegisterFormState> {
       state.copyWith(
         password: password,
         isValid: Formz.validate([ password, state.username, state.email ])
+        // el state es por que no tiene acceso a los otros campos no al pasword
       )
     );
   }
